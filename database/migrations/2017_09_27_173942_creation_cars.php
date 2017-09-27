@@ -13,7 +13,7 @@ class CreationCars extends Migration
      */
     public function up()
     {
-        Schema::create('create_cars',function (Blueprint $table){
+        Schema::create('cars',function (Blueprint $table){
             $table->increments('id');
             $table->string('title');
             $table->string('producer');
