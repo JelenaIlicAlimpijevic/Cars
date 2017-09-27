@@ -23,3 +23,6 @@ Route::get('/about', function () {
 });
 
 Route::get('/cars', 'CarsController@index');
+
+Route::get('/cars/{id}', ['as'=>'single-car','uses'=>'CarsController@show']);
+

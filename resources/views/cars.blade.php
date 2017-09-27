@@ -14,11 +14,39 @@
         
     </head>
     <body>
-        <ul>
-       @foreach($cars as $car)
-           <li> {{$car->title}} </li>
-       
-       @endforeach
-       </ul>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
+                </div>
+            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    @foreach($cars as $car)
+          <div class="car">
+
+            <h2 class="car-title">
+                <a href=" {{ route(
+                                'single-car',
+                                [ 'id' => $car->id ]
+                             )
+                         }} ">
+                    {{ $car->title }}
+                </a>
+            </h2>
+            <p>{{ $car->producer }} </p>
+        </div>
+        @endforeach
+                </div>
+
+                
+            </div>
+        </div>
     </body>
 </html>
