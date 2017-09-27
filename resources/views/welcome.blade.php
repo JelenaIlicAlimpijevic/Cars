@@ -79,7 +79,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome to car projects
+                    Welcome {{$name}} <br>
+                    I am {{$age}} old
                 </div>
 
                 <div class="links">
